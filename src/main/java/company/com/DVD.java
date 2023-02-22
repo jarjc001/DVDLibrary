@@ -23,7 +23,7 @@ public class DVD {
     }
 
     //Getters
-        public String getTitle() {
+    public String getTitle() {
         return title;
     }
 
