@@ -1,4 +1,4 @@
-package company.com;
+package com.DVDLibrary;
 
 public class Main {
     public static void main(String[] args) {
