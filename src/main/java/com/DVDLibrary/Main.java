@@ -1,7 +1,11 @@
 package com.DVDLibrary;
 
+import com.DVDLibrary.controller.DVDLibraryController;
+import com.DVDLibrary.ui.UserIOConsoleImpl;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        DVDLibraryController controller = new DVDLibraryController();
+        controller.runApp();
     }
 }

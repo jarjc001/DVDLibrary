@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="Start, created a simple class for DVD">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIOConsoleImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~$quirements.docx" afterDir="false" />
+    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="added ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/company/com/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dto/DVD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/company/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIOConsoleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIOConsoleImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +54,26 @@
     "last_opened_file_path": "C:/Users/theon/Documents/Important fouders/Wiley Edge Training/week 2 (oop)/DVDLibrary"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.DVDLibrary.Main" />
+      <module name="DVDLibrary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.DVDLibrary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,12 +90,20 @@
       <option name="project" value="LOCAL" />
       <updated>1677062494189</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added ui">
+      <created>1677191731470</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677191731470</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Start, created a simple class for DVD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start, created a simple class for DVD" />
+    <MESSAGE value="added ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ui" />
   </component>
 </project>

@@ -26,4 +26,16 @@ public class UserIOConsoleImpl implements UserIO {
         // Get the input line, and parse into an int
         return Integer.parseInt(stringValue);
     }
+
+    @Override
+    public int readInt(String prompt, int min, int max) {
+        int result;
+        //the loop will keep repeating until the input int is within range
+        do {
+            result = readInt(prompt);
+        }while(result<min || result>max);
+
+        return result;
+
+    }
 }

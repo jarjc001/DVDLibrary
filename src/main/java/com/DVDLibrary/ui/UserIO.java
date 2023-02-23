@@ -26,5 +26,16 @@ public interface UserIO {
      */
     int readInt(String prompt);
 
+    /**
+     * Takes in a String prompt to display to the user on the console,
+     * Will then Read an int input the user enters into the console,
+     * then will return said int input if it is in an inclusive range
+     * @param prompt - String prompt to be displayed on console
+     *@param min - min of the inclusive range
+     *@param max - max of the inclusive range
+     * @return - the answer of the prompt as a int
+     */
+    int readInt(String prompt, int min, int max);
+
 
 }
