@@ -73,8 +73,6 @@ public class DVDLibraryController {
             view.displayAddDvdBanner();                     //Banner saying we're adding
             Dvd newDvd = view.getNewDvdInfo();              //creates a Dvd object from prompts
             doa.addDvd(newDvd);                             //adds Dvd to Library
-//            addAnother = view.displayAddSuccess();          //prompts user if they want to add another Dvd
-//        }while (addAnother.contains("y") || addAnother.contains("Y"));
         }while(view.displayAddSuccess());
     }
 
