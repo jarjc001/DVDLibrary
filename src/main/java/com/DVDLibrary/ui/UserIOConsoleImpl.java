@@ -22,7 +22,7 @@ public class UserIOConsoleImpl implements UserIO {
     @Override
     public int readInt(String prompt) {
         // Print the Prompt
-        String stringValue = this.readString(prompt);
+        String stringValue = readString(prompt);
         // Get the input line, and parse into an int
         return Integer.parseInt(stringValue);
     }
@@ -42,7 +42,6 @@ public class UserIOConsoleImpl implements UserIO {
     @Override
     public char readChar(String prompt) {
         //print prompt
-        System.out.println(prompt);
-        return sc.next().charAt(0);
+        return readString(prompt).charAt(0);
     }
 }

@@ -36,7 +36,7 @@ public class DVDLibraryView {
      */
     public Dvd getNewDvdInfo(){
         String title = io.readString("Please enter DVD Title:");
-        String releaseDate = io.readString("Please enter Release Date:");
+        String releaseDate = io.readString("Please enter Release Date (ddmmyyyy):");
         String ratingMPAA = io.readString("Please enter MPAA Rating:");
         String director = io.readString("Please enter Director:");
         String studio = io.readString("Please enter Studio:");
@@ -70,11 +70,11 @@ public class DVDLibraryView {
         }
         io.readString("Please ENTER to continue"); //will prompt user to press enter
     }
-
     /**Simple Banner saying we're displaying DVD Library*/
     public void displayDisplayListBanner(){
         io.print("=^..^=   =^..^=   Display DVD Library    =^..^=    =^..^=");
     }
+
 
 
 
@@ -90,11 +90,52 @@ public class DVDLibraryView {
         }
         return repeatAction("remove another DVD");
     }
-
     /**Simple Banner saying we're removing a DVD*/
     public void displayRemoveDvdBanner(){
         io.print("=^..^=   =^..^=   Remove DVD    =^..^=    =^..^=");
     }
+
+
+
+
+    /**Displays the info for a given DVD
+     * @param dvd The DVD the user wants the info about
+     */
+    public boolean displayDvd(Dvd dvd){
+        if(dvd == null){
+            io.print("Couldn't find DVD in Library");
+        }else {
+            io.print(dvd.toString());
+        }
+        return repeatAction("find the info of another DVD");
+    }
+
+
+    /**Prompts user to enter the Dvd ID and returns it
+     * @return DVD ID
+     */
+    public int getDvdIdSearch(){
+        return io.readInt("Please enter DVD ID:");
+    }
+    /**Simple Banner saying we're displaying info of a DVD from ID*/
+    public void displayDisplayDvdIdBanner(){
+        io.print("=^..^=   =^..^=   Display Info of DVD    =^..^=    =^..^=");
+    }
+
+
+
+    /**Prompts user to enter the Dvd Title and returns it
+     * @return DVD ID
+     */
+    public int getDvdTitleSearch(){
+        return io.readInt("Please enter DVD Title:");
+    }
+    /**Simple Banner saying we're Searching for a DVD from Title*/
+    public void displayDisplayDvdTitleBanner(){
+        io.print("=^..^=   =^..^=   Search for DVD    =^..^=    =^..^=");
+    }
+
+
 
 
 
@@ -112,8 +153,10 @@ public class DVDLibraryView {
      * @return true and false whether the user wants to repeat the action
      */
     public boolean repeatAction (String promot){
-        String answer = io.readString("Do you want to "+ promot+ "? (y or n)");
-        if(answer.contains("y") || answer.contains("Y")){       //sees if the user's answer contains y or Y
+        char answer = io.readChar("Do you want to "+ promot + "? (y or n)");
+      //  if(answer.contains("y") || answer.contains("Y")){       //sees if the user's answer contains y or Y
+
+        if(answer == 'y' || answer == 'Y'){       //sees if the user's answer contains y or Y
             return true;
         }
         return false;

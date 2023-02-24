@@ -38,7 +38,7 @@ public class DVDLibraryController {
                     displayDvdLibrary();
                     break;
                 case 5:
-                    io.print("info");
+                    displayDvdInfoId();
                     break;
                 case 6:
                     io.print("title");
@@ -69,8 +69,8 @@ public class DVDLibraryController {
      */
     private void addDvdToLibrary(){
         String addAnother;
+        view.displayAddDvdBanner();  //Banner saying we're adding
         do {
-            view.displayAddDvdBanner();                     //Banner saying we're adding
             Dvd newDvd = view.getNewDvdInfo();              //creates a Dvd object from prompts
             doa.addDvd(newDvd);                             //adds Dvd to Library
         }while(view.displayAddSuccess());
@@ -83,6 +83,34 @@ public class DVDLibraryController {
         view.displayDisplayListBanner();
         view.displayDvdList(doa.getAllDvd());
     }
+
+    /**
+     * The user is prompted to find the info for a DVD in the library
+     * using the DVD ID, it will print the DVD info on the console
+     * if it is in Library
+     * Then after it is shown, they are asked again whether they want to show another
+     */
+    private void displayDvdInfoId (){
+        Dvd dvd;
+        view.displayDisplayDvdIdBanner();
+        do {
+            int dvdId = view.getDvdIdSearch();
+            dvd = doa.getDvdFromId(dvdId);
+        }while(view.displayDvd(dvd));
+    }
+
+
+    /**
+     * The user is prompted to Search for a DVD in the library
+     * using the DVD Title, it will print the DVD info on the console
+     * if it is in Library
+     */
+    private void searchDvdTitle(){
+
+    }
+
+
+
 
 
 //    private void removeDvdFromLibrary(){

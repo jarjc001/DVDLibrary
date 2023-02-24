@@ -26,7 +26,7 @@ public class Dvd {
      */
         public Dvd(String title, String releaseDate, String ratingMPAA, String director, String studio, String userNotes){
         this.title = title;
-        this.releaseDate = releaseDate;
+        this.releaseDate = convertDateSlash(releaseDate);
         this.ratingMPAA =  ratingMPAA;
         this.director = director;
         this.studio = studio;
@@ -86,17 +86,38 @@ public class Dvd {
     }
 
 
+    /**takes in the releasedate in either / , or none and returns it as / format
+     * / -> dd/mm/yyyy1
+     * , -> dd,mm,yyyy
+     *   -> ddmmyyyy
+     * @return date as dd/mm/yyyy
+     */
+    private String convertDateSlash(String dateFormat){
+        String[] dateArray = new String[3];
+        if (dateFormat.contains("/")){
+            dateArray = dateFormat.split("/");
+        }else if (dateFormat.contains(",")){
+            dateArray = dateFormat.split(",");
+        }else {
+            dateArray[0] = dateFormat.substring(0,2);
+            dateArray[1] = dateFormat.substring(2,4);
+            dateArray[2] = dateFormat.substring(4);
+        }
+        return (dateArray[0]+ "/" + dateArray[1]+ "/" + dateArray[2]);
+    }
+
+
     //To String for DVD Object
     @Override
     public String toString() {
         return "Dvd{" +
-                "title='" + title + '\'' +
+                "dvdId=" + dvdId+ '\'' +
+                ", title='" + title + '\'' +
                 ", releaseDate='" + releaseDate + '\'' +
                 ", ratingMPAA='" + ratingMPAA + '\'' +
                 ", director='" + director + '\'' +
                 ", studio='" + studio + '\'' +
-                ", userNotes='" + userNotes + '\'' +
-                ", dvdId=" + dvdId +
+                ", userNotes='" + userNotes +
                 '}';
     }
 }
