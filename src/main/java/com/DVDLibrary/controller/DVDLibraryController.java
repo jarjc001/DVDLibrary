@@ -68,13 +68,14 @@ public class DVDLibraryController {
      * Then after it is added, they are asked again whether they want to add another
      */
     private void addDvdToLibrary(){
-        char addAnother;
-        do{
+        String addAnother;
+        do {
             view.displayAddDvdBanner();                     //Banner saying we're adding
             Dvd newDvd = view.getNewDvdInfo();              //creates a Dvd object from prompts
             doa.addDvd(newDvd);                             //adds Dvd to Library
-            addAnother = view.displayAddSuccess();          //prompts user if they want to add another Dvd
-        }while (addAnother == 'y' || addAnother == 'Y');
+//            addAnother = view.displayAddSuccess();          //prompts user if they want to add another Dvd
+//        }while (addAnother.contains("y") || addAnother.contains("Y"));
+        }while(view.displayAddSuccess());
     }
 
 

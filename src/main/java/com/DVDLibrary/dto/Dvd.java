@@ -2,8 +2,8 @@ package com.DVDLibrary.dto;
 
 public class Dvd {
     private String title;
-    private int releaseDate;
-    private int ratingMPAA;
+    private String releaseDate;
+    private String ratingMPAA;
     private String director;
     private String studio;
     private String userNotes;
@@ -24,7 +24,7 @@ public class Dvd {
      * @param studio
      * @param userNotes
      */
-        public Dvd(String title, int releaseDate, int ratingMPAA, String director, String studio, String userNotes){
+        public Dvd(String title, String releaseDate, String ratingMPAA, String director, String studio, String userNotes){
         this.title = title;
         this.releaseDate = releaseDate;
         this.ratingMPAA =  ratingMPAA;
@@ -47,10 +47,10 @@ public class Dvd {
     public String getTitle() {
         return title;
     }
-    public int getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
-    public int getRatingMPAA() {
+    public String getRatingMPAA() {
         return ratingMPAA;
     }
     public String getDirector() {
@@ -69,10 +69,10 @@ public class Dvd {
     public void setTitle(String title) {
         this.title = title;
     }
-    public void setReleaseDate(int releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
-    public void setRatingMPAA(int ratingMPAA) {
+    public void setRatingMPAA(String ratingMPAA) {
         this.ratingMPAA = ratingMPAA;
     }
     public void setDirector(String director) {

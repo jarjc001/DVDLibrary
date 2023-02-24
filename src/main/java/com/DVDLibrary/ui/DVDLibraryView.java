@@ -32,15 +32,14 @@ public class DVDLibraryView {
      */
     public Dvd getNewDvdInfo(){
         String title = io.readString("Please enter DVD Title:");
-        int releaseDate = io.readInt("Please enter Release Date:");
-        int ratingMPAA = io.readInt("Please enter MPAA Rating:");
+        String releaseDate = io.readString("Please enter Release Date:");
+        String ratingMPAA = io.readString("Please enter MPAA Rating:");
         String director = io.readString("Please enter Director:");
         String studio = io.readString("Please enter Studio:");
         String userNotes = io.readString("Please enter any other user notes:");
         Dvd newDvd = new Dvd(title,releaseDate,ratingMPAA,director,studio,userNotes);
         return newDvd;
     }
-    //Something wrong, with another go at adding
 
     /**Simple Banner saying we're adding a Dvd*/
     public void displayAddDvdBanner(){
@@ -49,8 +48,13 @@ public class DVDLibraryView {
 
     /**Shown after a dvd is added to the library
      * will ask if they want to add another dvd or not
-     * @return char of whether the user want to add another dvd*/
-    public char displayAddSuccess(){
-        return io.readChar("DVD Added. Do you want to add another DVD? (y or n)");
-    }//add a reapeating thing?
+     * @return Boolean of whether the user want to add another dvd*/
+    public Boolean displayAddSuccess(){
+        String answer = io.readString("DVD Added. Do you want to add another DVD? (y or n)");
+        if(answer.contains("y") || answer.contains("Y")){       //sees if the user's answer contains y or Y
+            return true;
+        }
+        return false;
+
+    }
 }
