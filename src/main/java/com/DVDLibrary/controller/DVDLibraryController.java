@@ -1,5 +1,8 @@
 package com.DVDLibrary.controller;
 
+import com.DVDLibrary.dao.DVDLibraryDao;
+import com.DVDLibrary.dao.DVDLibraryDaoFileImpl;
+import com.DVDLibrary.dto.Dvd;
 import com.DVDLibrary.ui.DVDLibraryView;
 import com.DVDLibrary.ui.UserIO;
 import com.DVDLibrary.ui.UserIOConsoleImpl;
@@ -8,6 +11,9 @@ public class DVDLibraryController {
     /**implementation  of the UserIO*/
     private UserIO io = new UserIOConsoleImpl();
     private DVDLibraryView view = new DVDLibraryView();
+    private DVDLibraryDao doa = new DVDLibraryDaoFileImpl();
+
+
 
     /**Method to run the App, it starts the main menu*/
     public void runApp(){
@@ -20,7 +26,7 @@ public class DVDLibraryController {
 
             switch (menuSelect){
                 case 1:
-                    io.print("Add");
+                    addDvdToLibrary();
                     break;
                 case 2:
                     io.print("remove");
@@ -55,6 +61,20 @@ public class DVDLibraryController {
      */
     private int getMainMenu(){
         return view.printMainMenu();
+    }
+
+    /**
+     * The user is prompted to add a Dvd to the DVD Library.
+     * Then after it is added, they are asked again whether they want to add another
+     */
+    private void addDvdToLibrary(){
+        char addAnother;
+        do{
+            view.displayAddDvdBanner();                     //Banner saying we're adding
+            Dvd newDvd = view.getNewDvdInfo();              //creates a Dvd object from prompts
+            doa.addDvd(newDvd);                             //adds Dvd to Library
+            addAnother = view.displayAddSuccess();          //prompts user if they want to add another Dvd
+        }while (addAnother == 'y' || addAnother == 'Y');
     }
 
 

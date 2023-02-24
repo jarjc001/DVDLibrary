@@ -38,4 +38,11 @@ public class UserIOConsoleImpl implements UserIO {
         return result;
 
     }
+
+    @Override
+    public char readChar(String prompt) {
+        //print prompt
+        System.out.println(prompt);
+        return sc.next().charAt(0);
+    }
 }

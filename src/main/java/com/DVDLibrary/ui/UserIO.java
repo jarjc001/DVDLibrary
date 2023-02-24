@@ -38,4 +38,14 @@ public interface UserIO {
     int readInt(String prompt, int min, int max);
 
 
+    /**
+     * Takes in a String prompt to display to the user on the console,
+     * Will then Read a char input the user enters into the console,
+     * then will return said char input
+     * @param prompt - String prompt to be displayed on console
+     * @return - the answer of the prompt as a char
+     */
+    char readChar(String prompt);
+
+
 }

@@ -1,6 +1,6 @@
 package com.DVDLibrary.dto;
 
-public class DVD {
+public class Dvd {
     private String title;
     private int releaseDate;
     private int ratingMPAA;
@@ -16,7 +16,7 @@ public class DVD {
     public static int overallId = 1;
 
     /**
-     * A Constructor for the DVD object, this will hold all the info of each DVD
+     * A Constructor for the DVD object using all variables, this will hold all the info of each DVD
      * @param title
      * @param releaseDate
      * @param ratingMPAA
@@ -24,13 +24,22 @@ public class DVD {
      * @param studio
      * @param userNotes
      */
-        public DVD(String title, int releaseDate, int ratingMPAA, String director, String studio, String userNotes){
+        public Dvd(String title, int releaseDate, int ratingMPAA, String director, String studio, String userNotes){
         this.title = title;
         this.releaseDate = releaseDate;
         this.ratingMPAA =  ratingMPAA;
         this.director = director;
         this.studio = studio;
         this.userNotes = userNotes;
+        this.dvdId= overallId++;
+    }
+
+    /**
+     * A Constructor for the DVD object using only it's name
+     * @param title
+     */
+    public Dvd(String title) {
+        this.title = title;
         this.dvdId= overallId++;
     }
 
