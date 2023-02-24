@@ -85,6 +85,16 @@ public class DVDLibraryController {
     }
 
 
+//    private void removeDvdFromLibrary(){
+//        view.displayRemoveDvdBanner();
+//        do{
+//            String dvdId = view.getDvd     //chnage
+//
+//        }while (view.displayRemoveResult())
+//    }
+
+
+
 
 
 

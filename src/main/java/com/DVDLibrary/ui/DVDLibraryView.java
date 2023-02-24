@@ -8,6 +8,7 @@ public class DVDLibraryView {
     /**implementation  of the UserIO*/
     private UserIO io = new UserIOConsoleImpl();
 
+
     /**
      * Prints the Main menu's options on console,
      * then returns an int of the user's choice
@@ -25,6 +26,7 @@ public class DVDLibraryView {
 
         return io.readInt("Please choose from above:", 1, 7);
     }
+
 
 
     /**
@@ -51,13 +53,12 @@ public class DVDLibraryView {
     /**Shown after a dvd is added to the library
      * will ask if they want to add another dvd or not
      * @return Boolean of whether the user want to add another dvd*/
-    public Boolean displayAddSuccess(){
-        String answer = io.readString("DVD Added. Do you want to add another DVD? (y or n)");
-        if(answer.contains("y") || answer.contains("Y")){       //sees if the user's answer contains y or Y
-            return true;
-        }
-        return false;
+    public boolean displayAddSuccess(){
+        io.print("DVD Added");
+        return repeatAction("add another DVD");
     }
+
+
 
     /**For an inputted list of dvds in the library,
      * it will print the name and id of each DVD
@@ -74,4 +75,48 @@ public class DVDLibraryView {
     public void displayDisplayListBanner(){
         io.print("=^..^=   =^..^=   Display DVD Library    =^..^=    =^..^=");
     }
+
+
+
+    /**Shows to the user if the DVD removal was a success or not.
+     * Then will ask if they want to remove another dvd or not
+     * @param removedDvd the DVD the user wants to be removed
+     * @return Boolean of whether the user want to remove another dvd*/
+    public boolean displayRemoveResult(Dvd removedDvd){
+        if(removedDvd == null){
+            io.print("Couldn't find DVD in Library");
+        }else {
+            io.print("DVD removed from Library");
+        }
+        return repeatAction("remove another DVD");
+    }
+
+    /**Simple Banner saying we're removing a DVD*/
+    public void displayRemoveDvdBanner(){
+        io.print("=^..^=   =^..^=   Remove DVD    =^..^=    =^..^=");
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /**Prompts user if they want to repeat the action they have just done
+     * and returns a boolean true and false
+     * @param promot what action the user wants to repeat, "Do you want to "+ promot+ "? (y or n)"
+     * @return true and false whether the user wants to repeat the action
+     */
+    public boolean repeatAction (String promot){
+        String answer = io.readString("Do you want to "+ promot+ "? (y or n)");
+        if(answer.contains("y") || answer.contains("Y")){       //sees if the user's answer contains y or Y
+            return true;
+        }
+        return false;
+    }
+
 }
