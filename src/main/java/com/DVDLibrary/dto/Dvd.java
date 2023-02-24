@@ -85,4 +85,18 @@ public class Dvd {
         this.userNotes = userNotes;
     }
 
+
+    //To String for DVD Object
+    @Override
+    public String toString() {
+        return "Dvd{" +
+                "title='" + title + '\'' +
+                ", releaseDate='" + releaseDate + '\'' +
+                ", ratingMPAA='" + ratingMPAA + '\'' +
+                ", director='" + director + '\'' +
+                ", studio='" + studio + '\'' +
+                ", userNotes='" + userNotes + '\'' +
+                ", dvdId=" + dvdId +
+                '}';
+    }
 }

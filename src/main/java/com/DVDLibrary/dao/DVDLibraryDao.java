@@ -18,7 +18,7 @@ public abstract class DVDLibraryDao {
     public abstract List<Dvd> getAllDvd();
 
     /**
-     * Returns the DVD object with the DVD's Name
+     * Returns the DVD object using the DVD's Name as a parameter,
      * Returns null if no DVD with the name exists
      * @param dvdName ID of the DVD to get
      * @return the DVD object of the given name or null,
@@ -28,15 +28,23 @@ public abstract class DVDLibraryDao {
     //will properly have to turn it into an array
 
     /**
-     * Removes the DVD from the Library from its name.
+     * Removes the DVD from the Library from its Id.
      * Returns the DVD that is being removed or null if
      * there is no DVD of the given Name
-     * @param dvdName Name of student to be removed
+     * @param dvdId Id of Dvd to be removed
      * @return DVD object that was removed or null if no DVD
      * had the given name
      */
-    public abstract Dvd removeDvd(String dvdName);
+    public abstract Dvd removeDvd(String dvdId);
 
     //Could use id for remove dvd, maybe easiler than typing the name
+
+    /**
+     * Edits the information of the given Dvd already in the library
+     * @param dvd The DVD being edited
+     * @return Dvd object with the edited info
+     */
+    public abstract Dvd editDvd(Dvd dvd);
+
 }
 

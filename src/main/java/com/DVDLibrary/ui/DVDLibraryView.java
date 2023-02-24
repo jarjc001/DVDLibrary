@@ -2,6 +2,8 @@ package com.DVDLibrary.ui;
 
 import com.DVDLibrary.dto.Dvd;
 
+import java.util.List;
+
 public class DVDLibraryView {
     /**implementation  of the UserIO*/
     private UserIO io = new UserIOConsoleImpl();
@@ -21,7 +23,7 @@ public class DVDLibraryView {
         io.print("6. Search for a DVD by title");
         io.print("7. Exit");
 
-        return io.readInt("Please choose:", 1, 7);
+        return io.readInt("Please choose from above:", 1, 7);
     }
 
 
@@ -55,6 +57,21 @@ public class DVDLibraryView {
             return true;
         }
         return false;
+    }
 
+    /**For an inputted list of dvds in the library,
+     * it will print the name and id of each DVD
+     * @param dvdList - the dvd Library as a list
+     */
+    public void displayDvdList(List<Dvd> dvdList){
+        for (Dvd currentDvd : dvdList){                     //for every object in the list,
+            io.print(currentDvd.getDvdId() + ":" +currentDvd.getTitle() +" "); // it will print id and name
+        }
+        io.readString("Please ENTER to continue"); //will prompt user to press enter
+    }
+
+    /**Simple Banner saying we're displaying DVD Library*/
+    public void displayDisplayListBanner(){
+        io.print("=^..^=   =^..^=   Display DVD Library    =^..^=    =^..^=");
     }
 }

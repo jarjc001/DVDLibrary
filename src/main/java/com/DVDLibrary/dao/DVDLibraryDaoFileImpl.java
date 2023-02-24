@@ -2,6 +2,7 @@ package com.DVDLibrary.dao;
 
 import com.DVDLibrary.dto.Dvd;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,11 +19,10 @@ public class DVDLibraryDaoFileImpl extends DVDLibraryDao{
     public void addDvd(Dvd dvd) {
         dvdLibrary.put(dvd.getDvdId(),dvd);
     }
-    //maybe remove the return
 
     @Override
     public List<Dvd> getAllDvd() {
-        return null;
+        return new ArrayList<Dvd>(dvdLibrary.values());
     }
 
     @Override
@@ -31,7 +31,12 @@ public class DVDLibraryDaoFileImpl extends DVDLibraryDao{
     }
 
     @Override
-    public Dvd removeDvd(String dvdName) {
+    public Dvd removeDvd(String dvdId) {
+        return dvdLibrary.remove(dvdId);
+    }
+
+    @Override
+    public Dvd editDvd(Dvd dvd) {
         return null;
     }
 }

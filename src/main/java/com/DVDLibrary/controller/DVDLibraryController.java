@@ -35,7 +35,7 @@ public class DVDLibraryController {
                     io.print("edit");
                     break;
                 case 4:
-                    io.print("list");
+                    displayDvdLibrary();
                     break;
                 case 5:
                     io.print("info");
@@ -74,6 +74,14 @@ public class DVDLibraryController {
             Dvd newDvd = view.getNewDvdInfo();              //creates a Dvd object from prompts
             doa.addDvd(newDvd);                             //adds Dvd to Library
         }while(view.displayAddSuccess());
+    }
+
+    /**
+     * Returns a list of the DVDs in the library and their IDs to the console
+     */
+    private void displayDvdLibrary(){
+        view.displayDisplayListBanner();
+        view.displayDvdList(doa.getAllDvd());
     }
 
 
