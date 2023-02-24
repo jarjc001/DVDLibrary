@@ -16,8 +16,8 @@ public class DVDLibraryDaoFileImpl extends DVDLibraryDao{
 
 
     @Override
-    public void addDvd(Dvd dvd) {
-        dvdLibrary.put(dvd.getDvdId(),dvd);
+    public Dvd addDvd(Dvd dvd) {
+        return dvdLibrary.put(dvd.getDvdId(),dvd);
     }
 
     @Override
@@ -40,8 +40,5 @@ public class DVDLibraryDaoFileImpl extends DVDLibraryDao{
         return dvdLibrary.remove(dvdId);
     }
 
-    @Override
-    public Dvd editDvd(Dvd dvd) {
-        return null;
-    }
+
 }

@@ -5,11 +5,16 @@ import com.DVDLibrary.dto.Dvd;
 import java.util.List;
 
 public abstract class DVDLibraryDao {
+
+
     /**
-     * Adds the given DVD to the library. Not allowing for repeats
+     * Adds the given DVD to the library. Not allowing for repeats.
+     * If the DVD ID is the same as any in the Library,
+     * the added DVD will replace the old one
+     *
      * @return the DVD object, or null
      */
-    public abstract void addDvd(Dvd dvd);
+    public abstract Dvd addDvd(Dvd dvd);
 
     /**
      * Returns a List of all Dvds in the library.
@@ -47,12 +52,6 @@ public abstract class DVDLibraryDao {
 
     //Could use id for remove dvd, maybe easiler than typing the name
 
-    /**
-     * Edits the information of the given Dvd already in the library
-     * @param dvd The DVD being edited
-     * @return Dvd object with the edited info
-     */
-    public abstract Dvd editDvd(Dvd dvd);
 
 }
 

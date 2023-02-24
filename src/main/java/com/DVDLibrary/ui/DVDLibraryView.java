@@ -8,6 +8,7 @@ public class DVDLibraryView {
     /**implementation  of the UserIO*/
     private UserIO io = new UserIOConsoleImpl();
 
+    //main menu//
 
     /**
      * Prints the Main menu's options on console,
@@ -28,6 +29,7 @@ public class DVDLibraryView {
     }
 
 
+    //ADD DVD//
 
     /**
      * Prompts the user to fill in the info of the dvd they want to add to the Library,
@@ -41,8 +43,7 @@ public class DVDLibraryView {
         String director = io.readString("Please enter Director:");
         String studio = io.readString("Please enter Studio:");
         String userNotes = io.readString("Please enter any other user notes:");
-        Dvd newDvd = new Dvd(title,releaseDate,ratingMPAA,director,studio,userNotes);
-        return newDvd;
+        return new Dvd(title,releaseDate,ratingMPAA,director,studio,userNotes);
     }
 
     /**Simple Banner saying we're adding a Dvd*/
@@ -53,12 +54,13 @@ public class DVDLibraryView {
     /**Shown after a dvd is added to the library
      * will ask if they want to add another dvd or not
      * @return Boolean of whether the user want to add another dvd*/
-    public boolean displayAddSuccess(){
-        io.print("DVD Added");
+    public boolean displayAddSuccess(Dvd dvd){
+        io.print(dvd.getTitle() + " is added to Library");
         return repeatAction("add another DVD");
     }
 
 
+    //Display whole list//
 
     /**For an inputted list of dvds in the library,
      * it will print the name and id of each DVD
@@ -76,7 +78,7 @@ public class DVDLibraryView {
     }
 
 
-
+    //Remove DVD//
 
     /**Shows to the user if the DVD removal was a success or not.
      * Then will ask if they want to remove another dvd or not
@@ -86,7 +88,7 @@ public class DVDLibraryView {
         if(removedDvd == null){
             io.print("Couldn't find DVD in Library");
         }else {
-            io.print("DVD removed from Library");
+            io.print(removedDvd.getTitle() + " is removed from Library");
         }
         return repeatAction("remove another DVD");
     }
@@ -97,6 +99,7 @@ public class DVDLibraryView {
 
 
 
+    // Display info from Id and title //
 
     /**Displays the info for a given DVD
      * @param dvd The DVD the user wants the info about
@@ -117,11 +120,11 @@ public class DVDLibraryView {
     public int getDvdIdSearch(){
         return io.readInt("Please enter DVD ID:");
     }
+
     /**Simple Banner saying we're displaying info of a DVD from ID*/
     public void displayDisplayDvdIdBanner(){
         io.print("=^..^=   =^..^=   Display Info of DVD    =^..^=    =^..^=");
     }
-
 
 
     /**Prompts user to enter the Dvd Title and returns it
@@ -130,9 +133,64 @@ public class DVDLibraryView {
     public int getDvdTitleSearch(){
         return io.readInt("Please enter DVD Title:");
     }
+
     /**Simple Banner saying we're Searching for a DVD from Title*/
     public void displayDisplayDvdTitleBanner(){
         io.print("=^..^=   =^..^=   Search for DVD    =^..^=    =^..^=");
+    }
+
+
+
+    //Edit DVD//
+
+    /**
+     * Prompts the user to choose which information to edit for a given DVD
+     * @return the user's choice of info to edit
+     */
+    public int displayChooseInfoEdit(){
+        io.print("1. Title");
+        io.print("2. Release Date");
+        io.print("3. MPAA Rating");
+        io.print("4. Director's name");
+        io.print("5. Studio");
+        io.print("6. User Notes");
+        io.print("7. Exit");
+
+        return io.readInt("Please choose one from above:", 1, 7);
+    }
+
+
+
+    /**Shows to the user if the DVD removal was a success or not.
+     * Then will ask if they want to remove another dvd or not
+     * @param removedDvd the DVD the user wants to be removed
+     * @return Boolean of whether the user want to remove another dvd*/
+    public boolean displayEditInfoResult(Dvd removedDvd){
+        if(removedDvd == null){
+            io.print("Couldn't find DVD in Library");
+        }else {
+            io.print(removedDvd.getTitle() + " is removed from Library");
+        }
+        return repeatAction("remove another DVD");
+    }
+
+    /**Shows to the user if the DVD removal was a success or not.
+     * Then will ask if they want to remove another dvd or not
+     * @param removedDvd the DVD the user wants to be removed
+     * @return Boolean of whether the user want to remove another dvd*/
+    public boolean displayEditDvdResult(Dvd removedDvd){
+        if(removedDvd == null){
+            io.print("Couldn't find DVD in Library");
+        }else {
+            io.print(removedDvd.getTitle() + " is removed from Library");
+        }
+        return repeatAction("remove another DVD");
+    }
+
+
+    /**Simple Banner saying we're editing a DVD from ID*/
+    public void displayEditDvdBanner(){
+        io.print("=^..^=   =^..^=   Edit DVD    =^..^=    =^..^=");
     }
 
 
@@ -146,6 +204,7 @@ public class DVDLibraryView {
 
 
 
+    //repeat action//
 
     /**Prompts user if they want to repeat the action they have just done
      * and returns a boolean true and false

@@ -29,7 +29,7 @@ public class DVDLibraryController {
                     addDvdToLibrary();
                     break;
                 case 2:
-                    io.print("remove");
+                    removeDvdFromLibrary();
                     break;
                 case 3:
                     io.print("edit");
@@ -68,12 +68,12 @@ public class DVDLibraryController {
      * Then after it is added, they are asked again whether they want to add another
      */
     private void addDvdToLibrary(){
-        String addAnother;
+        Dvd newDvd;
         view.displayAddDvdBanner();  //Banner saying we're adding
         do {
-            Dvd newDvd = view.getNewDvdInfo();              //creates a Dvd object from prompts
+            newDvd = view.getNewDvdInfo();              //creates a Dvd object from prompts
             doa.addDvd(newDvd);                             //adds Dvd to Library
-        }while(view.displayAddSuccess());
+        }while(view.displayAddSuccess(newDvd));
     }
 
     /**
@@ -112,15 +112,33 @@ public class DVDLibraryController {
 
 
 
+    /**
+     * The user is prompted to remove a Dvd from the DVD Library using the dvd ID.
+     * Then after it is removed, they are asked again whether they want to remove another
+     */
+    private void removeDvdFromLibrary(){
+        Dvd removedDvd;
+        view.displayRemoveDvdBanner();
+        do{
+            int dvdId = view.getDvdIdSearch();
+            removedDvd = doa.removeDvd(dvdId);
+        }while (view.displayRemoveResult(removedDvd));
+    }
 
-//    private void removeDvdFromLibrary(){
-//        view.displayRemoveDvdBanner();
+
+
+//    private void editDvdInLibrary(){
+//        Dvd editDvd;
+//        view.displayEditDvdBanner();
 //        do{
-//            String dvdId = view.getDvd     //chnage
 //
-//        }while (view.displayRemoveResult())
-//    }
+//
+//        }while ();
 
+
+
+
+    }
 
 
 
