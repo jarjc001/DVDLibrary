@@ -229,8 +229,7 @@ public class DVDLibraryView {
      * 7. No info is edited
      * @param editDvd  DVD to be edited
      * @param infoToEdit the info which wants to be edited
-     * @return  the DVD after the edit
-     */
+     * @return  the DVD after the edit*/
     public Dvd setNewMediaInfo(Dvd editDvd, int infoToEdit) {
         switch (infoToEdit) {
             case 1:

@@ -65,7 +65,7 @@ public class DvdInfo {
      * , -> dd,mm,yyyy
      *   -> ddmmyyyy
      * @return date as dd/mm/yyyy
-     */
+     **/
     private String convertDateSlash(String dateFormat){
         //checks if the input date at least has a day, month and year
         if(dateFormat.length()<5){
