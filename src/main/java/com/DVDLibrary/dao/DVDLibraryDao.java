@@ -58,5 +58,13 @@ public abstract class DVDLibraryDao {
      */
     public abstract boolean isDvdNull(Dvd dvd);
 
+    /**Opens the txt file holding the DVD library when the program starts.
+     * It transfers Library to the programs memory*/
+    public abstract void openFile();
+
+    /**When the program is exiting, it writes the DVD Library info from memory
+     * to the txt file holding the data. It then closes the txt file.*/
+    public abstract void closeFile();
+
 }
 

@@ -2,9 +2,16 @@ package com.DVDLibrary.dao;
 
 import com.DVDLibrary.dto.Dvd;
 
+import java.io.*;
 import java.util.*;
 
 public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
+
+    /**File name to hold DVD Library */
+    private final String FILE_NAME = "dvd.txt";
+    /** Delimiter of the DVD Library file*/
+    private final String DELIMITER = ",";
+
 
     /**Map will act as the library of dvds held in the memory.
      *The key is the DVD's Id as an int
@@ -56,8 +63,69 @@ public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
 
 
 
+    @Override
+    public void openFile(){
+        File dataIn = new File(FILE_NAME);
+        FileReader fileReader;
+        String[] lineArray;
 
-    //add file look up
+        try{
+            fileReader = new FileReader(dataIn);
+            BufferedReader br = new BufferedReader(fileReader);
+            String lineFromLine;
+            do{
+                lineFromLine = br.readLine();
+                if(lineFromLine != null){
+                    lineArray = lineFromLine.split(DELIMITER);
+                    String title = lineArray[0];
+                    String releaseDate = lineArray[1];
+                    String ratingMPAA = lineArray[2];
+                    String director = lineArray[3];
+                    String studio = lineArray[4];
+                    String userNotes = lineArray[5];
 
+                    Dvd inputDvd = new Dvd(title,releaseDate,
+                                            ratingMPAA,director,
+                                            studio,userNotes);
+
+                    dvdLibrary.put(inputDvd.getDvdId(),inputDvd);
+                }
+            }while(lineFromLine != null);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (Exception f){
+
+        }
+
+
+    }
+
+    @Override
+    public void closeFile(){
+        File dataOut = new File(FILE_NAME);
+        FileWriter fileWriter;
+        String[] lineArray;
+
+        try{
+            fileWriter = new FileWriter(FILE_NAME);
+            PrintWriter pr = new PrintWriter(fileWriter);
+            String lineFromLine;
+
+            for(Dvd dvd:dvdLibrary.values()){
+                pr.println(dvd.getTitle()+DELIMITER
+                        +dvd.getReleaseDate()+DELIMITER
+                        +dvd.getRatingMPAA()+DELIMITER
+                        +dvd.getDirector()+DELIMITER
+                        +dvd.getStudio()+DELIMITER
+                        +dvd.getUserNotes()+DELIMITER);
+            }
+            pr.flush();
+            pr.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

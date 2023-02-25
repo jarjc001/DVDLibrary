@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="Dependency Injection">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryViewConsoleImpl.java" afterDir="false" />
+    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="search by title">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dvd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dvd.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileExtend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dto/Dvd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dto/Dvd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileExtend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileExtend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryViewConsoleImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIOConsoleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIOConsoleImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$quirements.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677286512550</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="search by title">
+      <created>1677359393765</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677359393765</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -194,6 +200,7 @@
     <MESSAGE value="Finished remover&#10;started edit" />
     <MESSAGE value="finished Edit" />
     <MESSAGE value="Dependency Injection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dependency Injection" />
+    <MESSAGE value="search by title" />
+    <option name="LAST_COMMIT_MESSAGE" value="search by title" />
   </component>
 </project>

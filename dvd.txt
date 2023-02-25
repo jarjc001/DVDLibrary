@@ -1,9 +1,9 @@
-Jaws,26121975,15,Spielberg,Warner,A biteful
-The lord of the rings: the fellowship of the ring,10122001,13,Peter Jackson,New Line Cinema,10/10
-One,12121999,18,Terry,HBO,Yuck
-Gladiator,01052000,15,Ridley Scott,DreamWorks,Ridley Scott's Gladiator is an epic film with quotes to match
-Valhalla Rising,10102016,21,Thorsen,Norway Films,Good
-Dune,21102021,15,Denis Villeneuve,Legendary Pictures,magical
-SpaceBalls,02031983,12,M. Brooks,Warner,Funny
-Arrival,01092016,12,Dennis Villeneuve,FilmNation Entertainment,94% Approval rating on Rotten Tomatoes
-The Proposition,10402015,18,N. Cave,AMG,Excellent
+Jaws,26/12/1975,15,Spielberg,Warner,A biteful,
+The lord of the rings: the fellowship of the ring,10/12/2001,13,Peter Jackson,New Line Cinema,10/10,
+One,12/12/1999,18,Terry,HBO,Yuck,
+Gladiator,01/05/2000,15,Ridley Scott,DreamWorks,Ridley Scott's Gladiator is an epic film with quotes to match,
+Valhalla Rising,10/10/2016,21,Thorsen,Norway Films,Good,
+Dune,21/10/2021,15,Denis Villeneuve,Legendary Pictures,magical,
+SpaceBalls,02/03/1983,12,M. Brooks,Warner,Funny,
+Arrival,01/09/2016,12,Dennis Villeneuve,FilmNation Entertainment,94% Approval rating on Rotten Tomatoes,
+The Proposition,10/40/2015,18,N. Cave,AMG,Excellent,

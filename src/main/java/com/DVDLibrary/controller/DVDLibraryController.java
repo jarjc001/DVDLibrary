@@ -2,7 +2,7 @@ package com.DVDLibrary.controller;
 
 import com.DVDLibrary.dao.DVDLibraryDao;
 import com.DVDLibrary.dto.Dvd;
-import com.DVDLibrary.ui.DVDLibraryViewConsoleImpl;
+import com.DVDLibrary.ui.DVDLibraryView;
 import com.DVDLibrary.ui.UserIO;
 import com.DVDLibrary.ui.UserIOConsoleImpl;
 
@@ -10,20 +10,21 @@ public class DVDLibraryController {
 
     private UserIO io = new UserIOConsoleImpl();
     /** Declaration of the DVDLibraryView */
-    private DVDLibraryViewConsoleImpl view;
+    private DVDLibraryView view;
     /** Declaration of the DVDLibraryDao */
     private DVDLibraryDao doa;
 
     /**Constructor
      * @param view DVDLibraryView
      * @param doa  DVDLibraryDao */
-    public DVDLibraryController(DVDLibraryViewConsoleImpl view, DVDLibraryDao doa) {
+    public DVDLibraryController(DVDLibraryView view, DVDLibraryDao doa) {
         this.view = view;
         this.doa = doa;
     }
 
     /**Method to run the App, it starts the main menu*/
     public void runApp(){
+        startProgram();
         boolean keepRunning = true;     //switch for repeating main menu
         //int menuSelect = 0;
 
@@ -59,8 +60,23 @@ public class DVDLibraryController {
 
         }
         exitMessage();
+        endProgram();
 
     }
+
+    /**Opens the txt file when the program starts,
+     * transfers file data into memory*/
+    private void startProgram(){
+        doa.openFile();
+    }
+
+    /**Writes the DVD Library info into the txt file,
+     * then closes the file */
+    private void endProgram(){
+        doa.closeFile();
+    }
+
+
 
     /**Prints the Main menu's options on console,
      * then returns an int of the user's choice
@@ -103,7 +119,7 @@ public class DVDLibraryController {
         do {
             int dvdId = view.getDvdIdSearch();
             dvd = doa.getDvdFromId(dvdId);
-        }while(view.displayDvdId(dvd));
+        }while(view.displayDvd(dvd));
     }
 
 
@@ -118,7 +134,7 @@ public class DVDLibraryController {
         do{
             String dvdTitle = view.getDvdTitleSearch();
             searchDvd = view.chooseDvdFromArrayList(doa.getDvdFromTitle(dvdTitle));
-        }while(view.displayDvdTitle(searchDvd));
+        }while(view.displayDvd(searchDvd));
     }
 
 
@@ -180,12 +196,5 @@ public class DVDLibraryController {
     private void exitMessage() {
         view.displayExitBanner();
     }
-
-
-
-
-
-
-
 
 }

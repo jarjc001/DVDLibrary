@@ -21,7 +21,6 @@ public class UserIOConsoleImpl implements UserIO {
 
     @Override
     public int readInt(String prompt) {
-        // Print the Prompt
         int num;
         while (true) {
             try {
