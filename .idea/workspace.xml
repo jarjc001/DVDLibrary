@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="Finished remover&#10;started edit">
+    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="finished Edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +52,8 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.DVDLibrary.Main" />
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.DVDLibrary.App" />
       <module name="DVDLibrary" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677277787206</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="finished Edit">
+      <created>1677285836460</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677285836460</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -173,7 +178,8 @@
     <MESSAGE value="added remove dvd, missing last bit of controller" />
     <MESSAGE value="added search by id - works&#10;added search by title - not yet&#10;added a date formatter to the dto" />
     <MESSAGE value="Finished remover&#10;started edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished remover&#10;started edit" />
+    <MESSAGE value="finished Edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished Edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

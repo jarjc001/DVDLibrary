@@ -5,8 +5,14 @@ import com.DVDLibrary.dto.Dvd;
 import java.util.List;
 
 public class DVDLibraryView {
-    /**implementation  of the UserIO*/
-    private UserIO io = new UserIOConsoleImpl();
+    /**Declaration of the UserIO*/
+    private UserIO io;
+
+    /**Constructor
+     * @param io UserIOConsoleImpl */
+    public DVDLibraryView(UserIO io) {
+        this.io = io;
+    }
 
     //main menu//
 

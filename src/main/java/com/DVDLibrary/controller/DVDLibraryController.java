@@ -8,12 +8,20 @@ import com.DVDLibrary.ui.UserIO;
 import com.DVDLibrary.ui.UserIOConsoleImpl;
 
 public class DVDLibraryController {
-    /**implementation  of the UserIO*/
+
     private UserIO io = new UserIOConsoleImpl();
-    private DVDLibraryView view = new DVDLibraryView();
-    private DVDLibraryDao doa = new DVDLibraryDaoFileImpl();
+    /** Declaration of the DVDLibraryView */
+    private DVDLibraryView view;
+    /** Declaration of the DVDLibraryDao */
+    private DVDLibraryDao doa;
 
-
+    /**Constructor
+     * @param view DVDLibraryView
+     * @param doa  DVDLibraryDao */
+    public DVDLibraryController(DVDLibraryView view, DVDLibraryDao doa) {
+        this.view = view;
+        this.doa = doa;
+    }
 
     /**Method to run the App, it starts the main menu*/
     public void runApp(){
