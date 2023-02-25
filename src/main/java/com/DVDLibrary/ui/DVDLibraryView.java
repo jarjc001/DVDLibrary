@@ -147,7 +147,7 @@ public class DVDLibraryView {
      * Prompts the user to choose which information to edit for a given DVD
      * @return the user's choice of info to edit
      */
-    public int displayChooseInfoEdit(){
+    public int displayChooseInfoEdit(Dvd dvdEdit){
         io.print("1. Title");
         io.print("2. Release Date");
         io.print("3. MPAA Rating");
@@ -156,35 +156,79 @@ public class DVDLibraryView {
         io.print("6. User Notes");
         io.print("7. Exit");
 
-        return io.readInt("Please choose one from above:", 1, 7);
+        return io.readInt(("Please choose one from above to edit: " +dvdEdit.getTitle()), 1, 7);
     }
 
-
-
-    /**Shows to the user if the DVD removal was a success or not.
-     * Then will ask if they want to remove another dvd or not
-     * @param removedDvd the DVD the user wants to be removed
-     * @return Boolean of whether the user want to remove another dvd*/
-    public boolean displayEditInfoResult(Dvd removedDvd){
-        if(removedDvd == null){
+    ///think this is exceptiion handling///
+    /**Shows after the user has chosen the dvd to edit from DVD ID.
+     * It wll say if the dvd exists in the library. If it doesn't,
+     * it will ask the user whether they want to find another DVD or continue with the null
+     * @param editDvd the DVD the user wants to edit
+     * @return Boolean of whether the dvd exits in library*/
+    public boolean displayEditDvdFoundResult(Dvd editDvd) {
+        if (editDvd == null) {
             io.print("Couldn't find DVD in Library");
+            return repeatAction("find another DVD");
         }else {
-            io.print(removedDvd.getTitle() + " is removed from Library");
+            return true;
         }
-        return repeatAction("remove another DVD");
     }
 
-    /**Shows to the user if the DVD removal was a success or not.
-     * Then will ask if they want to remove another dvd or not
-     * @param removedDvd the DVD the user wants to be removed
-     * @return Boolean of whether the user want to remove another dvd*/
-    public boolean displayEditDvdResult(Dvd removedDvd){
-        if(removedDvd == null){
-            io.print("Couldn't find DVD in Library");
-        }else {
-            io.print(removedDvd.getTitle() + " is removed from Library");
+    ///use an enum here????
+
+    /**
+     * Edits the info of a DVD based on the infoToEdit
+     * 1. Title
+     * 2. Release Date
+     * 3. MPAA Rating
+     * 4. Director's name
+     * 5. Studio
+     * 6. User Notes
+     * 7. No info is edited
+     * @param editDvd  DVD to be edited
+     * @param infoToEdit the info which wants to be edited
+     * @return  the DVD after the edit
+     */
+    public Dvd setNewMediaInfo(Dvd editDvd, int infoToEdit) {
+        switch (infoToEdit) {
+            case 1:
+                editDvd.setTitle(io.readString("New Title:"));
+                break;
+            case 2:
+                editDvd.setReleaseDate(io.readString("New Release Date:"));
+                break;
+            case 3:
+                editDvd.setRatingMPAA(io.readString("New MPAA Rating:"));
+                break;
+            case 4:
+                editDvd.setDirector(io.readString("New Director's name:"));
+                break;
+            case 5:
+                editDvd.setStudio(io.readString("New User Notes:"));
+                break;
+            case 6:
+                editDvd.setUserNotes(io.readString("New Title:"));
+                break;
+            default:
+                io.print(editDvd.getTitle() + " was not edited");
         }
-        return repeatAction("remove another DVD");
+        return editDvd;
+    }
+
+    /**Shows to the user the DVD has been edited.
+     * Then will ask if they want to edit the same DVD again
+     * @param editDvd the DVD the user has edited
+     * @return Boolean of whether the user want to edit the DVD again*/
+    public boolean displayEditInfoResult(Dvd editDvd){
+            io.print(editDvd.getTitle() + " has been edited in Library");
+        return repeatAction(("edit " + editDvd.getTitle() + " again"));
+    }
+
+    /**
+     * Ask the user if they want to edit the another DVD
+     * @return Boolean of whether the user want to edit another DVD */
+    public boolean displayEditDvdResult(){
+        return repeatAction(("edit another DVD"));
     }
 
 
@@ -213,8 +257,6 @@ public class DVDLibraryView {
      */
     public boolean repeatAction (String promot){
         char answer = io.readChar("Do you want to "+ promot + "? (y or n)");
-      //  if(answer.contains("y") || answer.contains("Y")){       //sees if the user's answer contains y or Y
-
         if(answer == 'y' || answer == 'Y'){       //sees if the user's answer contains y or Y
             return true;
         }

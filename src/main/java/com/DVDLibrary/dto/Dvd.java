@@ -70,7 +70,7 @@ public class Dvd {
         this.title = title;
     }
     public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+        this.releaseDate = convertDateSlash(releaseDate);
     }
     public void setRatingMPAA(String ratingMPAA) {
         this.ratingMPAA = ratingMPAA;

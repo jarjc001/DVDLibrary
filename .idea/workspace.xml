@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="added search by id - works&#10;added search by title - not yet&#10;added a date formatter to the dto">
+    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="Finished remover&#10;started edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" afterDir="false" />
@@ -152,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677273850057</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finished remover&#10;started edit">
+      <created>1677277787206</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677277787206</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -165,7 +172,8 @@
     <MESSAGE value="added list all dvds" />
     <MESSAGE value="added remove dvd, missing last bit of controller" />
     <MESSAGE value="added search by id - works&#10;added search by title - not yet&#10;added a date formatter to the dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="added search by id - works&#10;added search by title - not yet&#10;added a date formatter to the dto" />
+    <MESSAGE value="Finished remover&#10;started edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished remover&#10;started edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

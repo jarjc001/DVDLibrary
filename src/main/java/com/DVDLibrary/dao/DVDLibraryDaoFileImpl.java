@@ -40,5 +40,13 @@ public class DVDLibraryDaoFileImpl extends DVDLibraryDao{
         return dvdLibrary.remove(dvdId);
     }
 
+    @Override
+    public boolean isDvdNull(Dvd dvd) {
+        if (dvd == null){
+            return true;
+        }
+        return false;
+    }
+
 
 }
