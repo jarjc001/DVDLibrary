@@ -48,8 +48,6 @@ public abstract class DVDLibraryDao {
      */
     public abstract Dvd removeDvd(int dvdId);
 
-    //Could use id for remove dvd, maybe easier than typing the name
-
     /**
      * Tests to see if the DVD is null or not
      * @param dvd DVD to be tested

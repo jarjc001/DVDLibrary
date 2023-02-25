@@ -1,7 +1,6 @@
 package com.DVDLibrary.dto;
 
 public class DvdInfo {
-    //use as an object to hold dvd info
     //show composition
 
     private String  releaseDate;
