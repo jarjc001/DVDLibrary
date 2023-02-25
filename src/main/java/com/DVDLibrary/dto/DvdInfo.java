@@ -10,6 +10,14 @@ public class DvdInfo {
     private String studio;
     private String userNotes;
 
+    /**
+     * A Constructor for the DVD Info object. It holds the DVD's info that isn't its title or name
+     * @param releaseDate DVD release Date
+     * @param ratingMPAA  DVD MPPA rating
+     * @param director  DVD Director
+     * @param studio    DVD Studio
+     * @param userNotes DVD User's Notes
+     */
     public DvdInfo(String releaseDate, String ratingMPAA, String director, String studio, String userNotes) {
         this.releaseDate = convertDateSlash(releaseDate);
         this.ratingMPAA = ratingMPAA;
@@ -19,45 +27,35 @@ public class DvdInfo {
     }
 
     //Getters
-
     public String getReleaseDate() {
         return releaseDate;
     }
-
     public String getRatingMPAA() {
         return ratingMPAA;
     }
-
     public String getDirector() {
         return director;
     }
-
     public String getStudio() {
         return studio;
     }
-
     public String getUserNotes() {
         return userNotes;
     }
 
     //Setters
-
     public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+        this.releaseDate = convertDateSlash(releaseDate);
     }
-
     public void setRatingMPAA(String ratingMPAA) {
         this.ratingMPAA = ratingMPAA;
     }
-
     public void setDirector(String director) {
         this.director = director;
     }
-
     public void setStudio(String studio) {
         this.studio = studio;
     }
-
     public void setUserNotes(String userNotes) {
         this.userNotes = userNotes;
     }

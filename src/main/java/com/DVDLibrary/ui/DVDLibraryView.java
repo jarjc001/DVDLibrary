@@ -1,6 +1,7 @@
 package com.DVDLibrary.ui;
 
 import com.DVDLibrary.dto.Dvd;
+import com.DVDLibrary.dto.DvdInfo;
 
 import java.util.List;
 
@@ -52,7 +53,8 @@ public class DVDLibraryView {
         String director = io.readString("Please enter Director:");
         String studio = io.readString("Please enter Studio:");
         String userNotes = io.readString("Please enter any other user notes:");
-        return new Dvd(title,releaseDate,ratingMPAA,director,studio,userNotes);
+        DvdInfo dvdInfo = new DvdInfo(releaseDate,ratingMPAA,director,studio,userNotes);
+        return new Dvd(title,dvdInfo);
     }
 
     /**Simple Banner saying we're adding a Dvd*/
@@ -126,13 +128,13 @@ public class DVDLibraryView {
         if(dvd == null){
             io.print("Couldn't find DVD in Library");
         }else {
-            io.print("ID" + dvd.getDvdId());
+            io.print("ID: " + dvd.getDvdId());
             io.print("Title: "+ dvd.getTitle());
-            io.print("Release Date: " +dvd.getReleaseDate());
-            io.print("MPAA Rating: "+dvd.getRatingMPAA());
-            io.print("Director's name: "+dvd.getDirector());
-            io.print("Studio: "+dvd.getStudio());
-            io.print("User Notes: "+dvd.getUserNotes());
+            io.print("Release Date: " +dvd.getDvdInfo().getReleaseDate());
+            io.print("MPAA Rating: "+dvd.getDvdInfo().getRatingMPAA());
+            io.print("Director's name: "+dvd.getDvdInfo().getDirector());
+            io.print("Studio: "+dvd.getDvdInfo().getStudio());
+            io.print("User Notes: "+dvd.getDvdInfo().getUserNotes());
         }
         return repeatAction("search for another DVD");
     }
@@ -206,13 +208,13 @@ public class DVDLibraryView {
      * It wll say if the dvd exists in the library. If it doesn't,
      * it will ask the user whether they want to find another DVD or continue with the null
      * @param editDvd the DVD the user wants to edit
-     * @return Boolean of whether the dvd exits in library*/
+     * @return Boolean of whether to repeat the search*/
     public boolean displayEditDvdFoundResult(Dvd editDvd) {
         if (editDvd == null) {
             io.print("Couldn't find DVD in Library");
             return repeatAction("find another DVD");
         }else {
-            return true;
+            return false;
         }
     }
 
@@ -235,19 +237,19 @@ public class DVDLibraryView {
                 editDvd.setTitle(io.readString("New Title:"));
                 break;
             case 2:
-                editDvd.setReleaseDate(io.readString("New Release Date:"));
+                editDvd.getDvdInfo().setReleaseDate(io.readString("New Release Date:"));
                 break;
             case 3:
-                editDvd.setRatingMPAA(io.readString("New MPAA Rating:"));
+                editDvd.getDvdInfo().setRatingMPAA(io.readString("New MPAA Rating:"));
                 break;
             case 4:
-                editDvd.setDirector(io.readString("New Director's name:"));
+                editDvd.getDvdInfo().setDirector(io.readString("New Director's name:"));
                 break;
             case 5:
-                editDvd.setStudio(io.readString("New User Notes:"));
+                editDvd.getDvdInfo().setStudio(io.readString("New User Notes:"));
                 break;
             case 6:
-                editDvd.setUserNotes(io.readString("New Title:"));
+                editDvd.getDvdInfo().setUserNotes(io.readString("New Title:"));
                 break;
             default:
                 io.print(editDvd.getTitle() + " was not edited");

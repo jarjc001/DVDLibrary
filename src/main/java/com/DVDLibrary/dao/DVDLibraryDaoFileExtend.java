@@ -1,6 +1,7 @@
 package com.DVDLibrary.dao;
 
 import com.DVDLibrary.dto.Dvd;
+import com.DVDLibrary.dto.DvdInfo;
 
 import java.io.*;
 import java.util.*;
@@ -84,9 +85,10 @@ public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
                     String studio = lineArray[4];
                     String userNotes = lineArray[5];
 
-                    Dvd inputDvd = new Dvd(title,releaseDate,
-                                            ratingMPAA,director,
-                                            studio,userNotes);
+                    DvdInfo inputDvdInfo = new DvdInfo(releaseDate,ratingMPAA,
+                                                        director,studio,userNotes);
+
+                    Dvd inputDvd = new Dvd(title,inputDvdInfo);
 
                     dvdLibrary.put(inputDvd.getDvdId(),inputDvd);
                 }
@@ -111,11 +113,11 @@ public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
 
             for(Dvd dvd:dvdLibrary.values()){
                 pr.println(dvd.getTitle()+DELIMITER
-                        +dvd.getReleaseDate()+DELIMITER
-                        +dvd.getRatingMPAA()+DELIMITER
-                        +dvd.getDirector()+DELIMITER
-                        +dvd.getStudio()+DELIMITER
-                        +dvd.getUserNotes()+DELIMITER);
+                        +dvd.getDvdInfo().getReleaseDate()+DELIMITER
+                        +dvd.getDvdInfo().getRatingMPAA()+DELIMITER
+                        +dvd.getDvdInfo().getDirector()+DELIMITER
+                        +dvd.getDvdInfo().getStudio()+DELIMITER
+                        +dvd.getDvdInfo().getUserNotes()+DELIMITER);
             }
             pr.flush();
             pr.close();
