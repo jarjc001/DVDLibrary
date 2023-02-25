@@ -2,12 +2,9 @@ package com.DVDLibrary.dao;
 
 import com.DVDLibrary.dto.Dvd;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class DVDLibraryDaoFileImpl extends DVDLibraryDao{
+public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
 
     /**Map will act as the library of dvds held in the memory.
      *The key is the DVD's Id as an int
@@ -30,9 +27,18 @@ public class DVDLibraryDaoFileImpl extends DVDLibraryDao{
         return dvdLibrary.get(dvdId);
     }
 
+
     @Override
-    public Dvd getDvdFromTitle(String dvdTitle){
-        return null;
+    public List<Dvd> getDvdFromTitle(String dvdTitleTest){
+        Set<Integer> IdSet = dvdLibrary.keySet();
+        List<Dvd> dvdList = new ArrayList<>();
+        for (int id: IdSet){
+            if(dvdLibrary.get(id).getTitle().contains(dvdTitleTest)){    //
+                //adds the DVD to dvdList if it's title contains dvdTitleTest
+                dvdList.add(dvdLibrary.get(id));
+            }
+        }
+        return dvdList;
     }
 
     @Override
@@ -47,6 +53,11 @@ public class DVDLibraryDaoFileImpl extends DVDLibraryDao{
         }
         return false;
     }
+
+
+
+
+    //add file look up
 
 
 }

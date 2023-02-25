@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="finished Edit">
+    <list default="true" id="3d06bdfb-0fda-44d4-ae74-2a5be2e25ffd" name="Changes" comment="Dependency Injection">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryViewConsoleImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/controller/DVDLibraryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileExtend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dto/Dvd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/dto/Dvd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/DVDLibraryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIOConsoleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DVDLibrary/ui/UserIOConsoleImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$quirements.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -43,14 +50,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/theon/Documents/Important fouders/Wiley Edge Training/week 2 (oop)/MapsAndLists"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/theon/Documents/Important fouders/Wiley Edge Training/week 2 (oop)/MapsAndLists&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.DVDLibrary.App" />
@@ -67,7 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677285836460</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Dependency Injection">
+      <created>1677286512550</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677286512550</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -179,17 +193,7 @@
     <MESSAGE value="added search by id - works&#10;added search by title - not yet&#10;added a date formatter to the dto" />
     <MESSAGE value="Finished remover&#10;started edit" />
     <MESSAGE value="finished Edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished Edit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/DVDLibrary/dao/DVDLibraryDaoFileImpl.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Dependency Injection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dependency Injection" />
   </component>
 </project>

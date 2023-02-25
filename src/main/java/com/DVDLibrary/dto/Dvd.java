@@ -93,6 +93,11 @@ public class Dvd {
      * @return date as dd/mm/yyyy
      */
     private String convertDateSlash(String dateFormat){
+        //checks if the input date at least has a day, month and year
+        if(dateFormat.length()<5){
+            return ("dd/mm/yyyy Invalid Release Date Given");
+        }
+
         String[] dateArray = new String[3];
         if (dateFormat.contains("/")){
             dateArray = dateFormat.split("/");
@@ -105,6 +110,8 @@ public class Dvd {
         }
         return (dateArray[0]+ "/" + dateArray[1]+ "/" + dateArray[2]);
     }
+
+
 
 
     //To String for DVD Object

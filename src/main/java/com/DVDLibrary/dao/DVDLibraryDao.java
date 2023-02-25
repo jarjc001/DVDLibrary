@@ -3,6 +3,7 @@ package com.DVDLibrary.dao;
 import com.DVDLibrary.dto.Dvd;
 
 import java.util.List;
+import java.util.Set;
 
 public abstract class DVDLibraryDao {
 
@@ -30,13 +31,11 @@ public abstract class DVDLibraryDao {
      */
     public abstract Dvd getDvdFromId(int dvdId);
 
-
-    /** Returns the DVD object using the DVD's Name as a parameter,
-     * Returns null if no DVD with the name exists
-     * @param dvdTitle Title of the DVD to get
-     * @return the DVD object of the given name or null,
+    /** Returns a list of DVD object whose Title contains dvdTitleTest,
+     * @param dvdTitleTest Title of the DVD to test
+     * @return list of DVD object whose Title contains the parameter Title,
      */
-    public abstract Dvd getDvdFromTitle(String dvdTitle);
+    public abstract List<Dvd> getDvdFromTitle(String dvdTitleTest);
 
 
 

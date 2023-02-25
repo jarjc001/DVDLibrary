@@ -1,9 +1,8 @@
 package com.DVDLibrary.controller;
 
 import com.DVDLibrary.dao.DVDLibraryDao;
-import com.DVDLibrary.dao.DVDLibraryDaoFileImpl;
 import com.DVDLibrary.dto.Dvd;
-import com.DVDLibrary.ui.DVDLibraryView;
+import com.DVDLibrary.ui.DVDLibraryViewConsoleImpl;
 import com.DVDLibrary.ui.UserIO;
 import com.DVDLibrary.ui.UserIOConsoleImpl;
 
@@ -11,14 +10,14 @@ public class DVDLibraryController {
 
     private UserIO io = new UserIOConsoleImpl();
     /** Declaration of the DVDLibraryView */
-    private DVDLibraryView view;
+    private DVDLibraryViewConsoleImpl view;
     /** Declaration of the DVDLibraryDao */
     private DVDLibraryDao doa;
 
     /**Constructor
      * @param view DVDLibraryView
      * @param doa  DVDLibraryDao */
-    public DVDLibraryController(DVDLibraryView view, DVDLibraryDao doa) {
+    public DVDLibraryController(DVDLibraryViewConsoleImpl view, DVDLibraryDao doa) {
         this.view = view;
         this.doa = doa;
     }
@@ -49,17 +48,17 @@ public class DVDLibraryController {
                     displayDvdInfoId();
                     break;
                 case 6:
-                    io.print("title");
+                    displayDvdTitle();
                     break;
                 case 7:
                     keepRunning=false;
                     break;
                 default:
-                    io.print("Unknown input");
+                    unknownCommand();
             }
 
         }
-        io.print("Good Bye");
+        exitMessage();
 
     }
 
@@ -104,7 +103,7 @@ public class DVDLibraryController {
         do {
             int dvdId = view.getDvdIdSearch();
             dvd = doa.getDvdFromId(dvdId);
-        }while(view.displayDvd(dvd));
+        }while(view.displayDvdId(dvd));
     }
 
 
@@ -113,8 +112,13 @@ public class DVDLibraryController {
      * using the DVD Title, it will print the DVD info on the console
      * if it is in Library
      */
-    private void searchDvdTitle(){
-
+    private void displayDvdTitle(){
+        Dvd searchDvd;
+        view.displayDisplayDvdTitleBanner();
+        do{
+            String dvdTitle = view.getDvdTitleSearch();
+            searchDvd = view.chooseDvdFromArrayList(doa.getDvdFromTitle(dvdTitle));
+        }while(view.displayDvdTitle(searchDvd));
     }
 
 
@@ -149,10 +153,10 @@ public class DVDLibraryController {
                 //finds the DVD the user want to edit
                 dvdId = view.getDvdIdSearch();
                 editToDvd = doa.getDvdFromId(dvdId);
-            //repeats section if DVD was not in Library
-            }while(!view.displayEditDvdFoundResult(editToDvd));
+            //asks to repeat section if DVD was not in Library
+            }while(view.displayEditDvdFoundResult(editToDvd));
 
-            //will return user to Main Menu if they didn't find a DVD
+            //will return user to Main Menu if user doesn't find a DVD
             if(doa.isDvdNull(editToDvd)){return;}
 
             do {
@@ -165,6 +169,19 @@ public class DVDLibraryController {
 
         }while (view.displayEditDvdResult());
      }
+
+
+    /**unknown command message*/
+    private void unknownCommand() {
+        view.displayUnknownCommandBanner();
+    }
+
+    /**Exit message*/
+    private void exitMessage() {
+        view.displayExitBanner();
+    }
+
+
 
 
 

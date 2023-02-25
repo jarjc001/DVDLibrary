@@ -22,9 +22,18 @@ public class UserIOConsoleImpl implements UserIO {
     @Override
     public int readInt(String prompt) {
         // Print the Prompt
-        String stringValue = readString(prompt);
-        // Get the input line, and parse into an int
-        return Integer.parseInt(stringValue);
+        int num;
+        while (true) {
+            try {
+                String stringValue = readString(prompt);
+                // Get the input line, and parse into an int
+                num = Integer.parseInt(stringValue);
+                break;
+            } catch (NumberFormatException e) {
+                this.print("Input not a number, Try again");
+            }
+        }
+        return num;
     }
 
     @Override
