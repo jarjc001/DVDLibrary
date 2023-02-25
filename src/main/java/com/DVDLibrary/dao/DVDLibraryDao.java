@@ -3,7 +3,6 @@ package com.DVDLibrary.dao;
 import com.DVDLibrary.dto.Dvd;
 
 import java.util.List;
-import java.util.Set;
 
 public abstract class DVDLibraryDao {
 
@@ -40,7 +39,7 @@ public abstract class DVDLibraryDao {
 
 
     /**
-     * Removes the DVD from the Library from its Id.
+     * Removes the DVD from the Library from its ID.
      * Returns the DVD that is being removed or null if
      * there is no DVD of the given Name
      * @param dvdId ID of Dvd to be removed
@@ -49,7 +48,7 @@ public abstract class DVDLibraryDao {
      */
     public abstract Dvd removeDvd(int dvdId);
 
-    //Could use id for remove dvd, maybe easiler than typing the name
+    //Could use id for remove dvd, maybe easier than typing the name
 
     /**
      * Tests to see if the DVD is null or not

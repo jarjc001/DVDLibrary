@@ -22,7 +22,7 @@ public interface UserIO {
      * Will then Read an int input the user enters into the console,
      * then will return said int input
      * @param prompt - String prompt to be displayed on console
-     * @return - the answer of the prompt as a int
+     * @return - the answer of the prompt as an int
      */
     int readInt(String prompt);
 
@@ -33,7 +33,7 @@ public interface UserIO {
      * @param prompt - String prompt to be displayed on console
      *@param min - min of the inclusive range
      *@param max - max of the inclusive range
-     * @return - the answer of the prompt as a int
+     * @return - the answer of the prompt as an int
      */
     int readInt(String prompt, int min, int max);
 

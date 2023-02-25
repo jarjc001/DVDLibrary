@@ -14,7 +14,7 @@ public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
 
 
     /**Map will act as the library of dvds held in the memory.
-     *The key is the DVD's Id as an int
+     *The key is the DVD's ID as an int
      *.The Value is the DVD itself as a DVD object*/
     private Map<Integer, Dvd> dvdLibrary = new HashMap<>();
 
@@ -64,7 +64,7 @@ public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
 
 
     @Override
-    public void openFile(){
+    public void openFile() {
         File dataIn = new File(FILE_NAME);
         FileReader fileReader;
         String[] lineArray;
@@ -95,8 +95,6 @@ public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } catch (Exception f){
-
         }
 
 
@@ -106,12 +104,10 @@ public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
     public void closeFile(){
         File dataOut = new File(FILE_NAME);
         FileWriter fileWriter;
-        String[] lineArray;
 
         try{
-            fileWriter = new FileWriter(FILE_NAME);
+            fileWriter = new FileWriter(dataOut);
             PrintWriter pr = new PrintWriter(fileWriter);
-            String lineFromLine;
 
             for(Dvd dvd:dvdLibrary.values()){
                 pr.println(dvd.getTitle()+DELIMITER

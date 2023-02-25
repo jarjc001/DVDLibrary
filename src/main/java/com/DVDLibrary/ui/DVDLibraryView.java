@@ -109,7 +109,7 @@ public class DVDLibraryView {
     }
 
 
-    // Display info from Id and title //
+    // Display info from ID and title //
 
 
     /**Prompts user to enter the Dvd ID and returns it
@@ -293,11 +293,11 @@ public class DVDLibraryView {
 
     /**Prompts user if they want to repeat the action they have just done
      * and returns a boolean true and false
-     * @param promot what action the user wants to repeat, "Do you want to "+ promot+ "? (y or n)"
+     * @param prompt what action the user wants to repeat, "Do you want to "+ prompt+ "? (y or n)"
      * @return true and false whether the user wants to repeat the action
      */
-    public boolean repeatAction (String promot){
-        char answer = io.readChar("Do you want to "+ promot + "? (y or n)");
+    public boolean repeatAction (String prompt){
+        char answer = io.readChar("Do you want to "+ prompt + "? (y or n)");
         if(answer == 'y' || answer == 'Y'){       //sees if the user's answer contains y or Y
             return true;
         }

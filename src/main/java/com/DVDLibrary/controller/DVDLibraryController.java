@@ -157,7 +157,7 @@ public class DVDLibraryController {
     /**
      * The user is prompted to choose a DVD in the Library to edit, using DVD ID.
      * Then the user chooses the information they want to edit and edits it.
-     * Then they are asked whether they want to edit more infomation on the same DVD
+     * Then they are asked whether they want to edit more information on the same DVD
      * or another one.
      */
     private void editDvdInLibrary(){
@@ -176,9 +176,9 @@ public class DVDLibraryController {
             if(doa.isDvdNull(editToDvd)){return;}
 
             do {
-                //Chooses which info to edit, then edits it based on prompot
-                int dvdInfo = view.displayChooseInfoEdit(editToDvd);
-                editToDvd = view.setNewMediaInfo(editToDvd, dvdInfo);
+                //Chooses which info to edit, then edits it based on prompt
+                int dvdInfoEdit = view.displayChooseInfoEdit(editToDvd);
+                editToDvd = view.setNewMediaInfo(editToDvd, dvdInfoEdit);
                 doa.addDvd(editToDvd);
             //repeats section if user wants to edit the same DVD again
             }while(view.displayEditInfoResult(editToDvd));

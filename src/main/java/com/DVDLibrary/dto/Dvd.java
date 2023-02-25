@@ -2,13 +2,14 @@ package com.DVDLibrary.dto;
 
 public class Dvd {
     private String title;
+    private DvdInfo dvdInfo;
     private String releaseDate;
     private String ratingMPAA;
     private String director;
     private String studio;
     private String userNotes;
 
-    /**An Id for each DVD, as to make accessing them easier */
+    /**An ID for each DVD, as to make accessing them easier */
     private int dvdId;
 
     /**This variable is used to create an id for each dvd
@@ -17,12 +18,12 @@ public class Dvd {
 
     /**
      * A Constructor for the DVD object using all variables, this will hold all the info of each DVD
-     * @param title
-     * @param releaseDate
-     * @param ratingMPAA
-     * @param director
-     * @param studio
-     * @param userNotes
+     * @param title DVD Title
+     * @param releaseDate DVD release Date
+     * @param ratingMPAA  DVD MPPA rating
+     * @param director  DVD Director
+     * @param studio    DVD Studio
+     * @param userNotes DVD User's Notes
      */
         public Dvd(String title, String releaseDate, String ratingMPAA, String director, String studio, String userNotes){
         this.title = title;
@@ -86,7 +87,7 @@ public class Dvd {
     }
 
 
-    /**takes in the releasedate in either / , or none and returns it as / format
+    /**takes in the release date in either / , or none and returns it as / format
      * / -> dd/mm/yyyy1
      * , -> dd,mm,yyyy
      *   -> ddmmyyyy
