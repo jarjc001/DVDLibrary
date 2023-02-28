@@ -1,7 +1,10 @@
 package com.DVDLibrary.ui;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Scanner;
 
+@Component
 public class UserIOConsoleImpl implements UserIO {
 
     /**Scanner object to take in console inputs from user*/

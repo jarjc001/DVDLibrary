@@ -5,7 +5,10 @@ import com.DVDLibrary.dto.Dvd;
 import com.DVDLibrary.ui.DVDLibraryView;
 import com.DVDLibrary.ui.UserIO;
 import com.DVDLibrary.ui.UserIOConsoleImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DVDLibraryController {
 
     private UserIO io = new UserIOConsoleImpl();
@@ -17,6 +20,7 @@ public class DVDLibraryController {
     /**Constructor
      * @param view DVDLibraryView
      * @param doa  DVDLibraryDao */
+    @Autowired //can be put over sub objects or over constructor
     public DVDLibraryController(DVDLibraryView view, DVDLibraryDao doa) {
         this.view = view;
         this.doa = doa;

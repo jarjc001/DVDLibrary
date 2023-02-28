@@ -2,10 +2,12 @@ package com.DVDLibrary.dao;
 
 import com.DVDLibrary.dto.Dvd;
 import com.DVDLibrary.dto.DvdInfo;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.*;
 
+@Component
 public class DVDLibraryDaoFileExtend extends DVDLibraryDao{
 
     /**File name to hold DVD Library */

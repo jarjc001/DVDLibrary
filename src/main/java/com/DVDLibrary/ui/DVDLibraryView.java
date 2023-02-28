@@ -2,15 +2,19 @@ package com.DVDLibrary.ui;
 
 import com.DVDLibrary.dto.Dvd;
 import com.DVDLibrary.dto.DvdInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class DVDLibraryView {
     /**Declaration of the UserIO*/
     private UserIO io;
 
     /**Constructor
      * @param io UserIOConsoleImpl */
+    @Autowired
     public DVDLibraryView(UserIO io) {
         this.io = io;
     }
