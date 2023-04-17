@@ -25,3 +25,7 @@ Your DVD data transfer object should have the following fields:
     Studio
     User rating or note (allows the user to enter additional information, e.g., "Good family movie")
 
+Feedback
+Graded by Eugene O'Regan
+100.00 %
+Comments:Excellent! Documentation, clear structure and implementation of all requirements. Brilliant work! 
